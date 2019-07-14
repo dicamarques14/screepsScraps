@@ -51,19 +51,19 @@ module.exports.loop = function () {
         }
     }
 
-    console.log("SPAWN",Game.spawns['Spawn1'].energy,Object.keys(Game.creeps).length)
+    //console.log("SPAWN",Game.spawns['Spawn1'].energy,Object.keys(Game.creeps).length)
     for(var name in Game.creeps) {
-        console.log(name+" "+Game.creeps[name].ticksToLive);
+        //console.log(name+" "+Game.creeps[name].ticksToLive);
         
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
             roleHarvester.run(creep);
         }
         if(creep.memory.role == 'upgrader') {
-            //roleUpgrader.run(creep);
+            roleUpgrader.run(creep);
         }
         if(creep.memory.role == 'builder') {
-            //roleBuilder.run(creep);
+            roleBuilder.run(creep);
         }
     }
 }
